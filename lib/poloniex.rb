@@ -23,6 +23,14 @@ module Poloniex
     end
   end
 
+  def self.get_margin_position(currency_pair) 
+    post 'getMarginPosition', currencyPair: currency_pair
+  end
+
+  def self.close_margin_position(currency_pair) 
+    post 'closeMarginPosition', currencyPair: currency_pair
+  end
+    
   def self.get_all_daily_exchange_rates( currency_pair )
     res = get 'returnChartData', currencyPair: currency_pair, period: 86400,  start: 0, :end => Time.now.to_i
   end
