@@ -64,7 +64,7 @@ module Poloniex
   end
 
   def self.complete_balances
-    post 'returnCompleteBalances'
+    post 'returnCompleteBalances', account: 'all'
   end
 
   def self.open_orders( currency_pair )
