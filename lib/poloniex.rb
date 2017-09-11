@@ -63,10 +63,14 @@ module Poloniex
     get 'returnCurrencies'
   end
 
-  def self.complete_balances
-    post 'returnCompleteBalances', account: 'all'
+  def self.exchange_balances
+    post 'returnCompleteBalances'
   end
 
+  def self.margin_balances
+    post 'returnCompleteBalances', account: 'margin'
+  end
+  
   def self.open_orders( currency_pair )
     post 'returnOpenOrders', currencyPair: currency_pair
   end
