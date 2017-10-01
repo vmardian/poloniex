@@ -82,6 +82,10 @@ module Poloniex
   def self.move_order( order_number, rate )
     post 'moveOrder', orderNumber: order_number, rate: rate
   end
+  
+  def self.move_order_with_amount( order_number, rate, amount )
+    post 'moveOrder', orderNumber: order_number, rate: rate, amount: amount
+  end
 
   def self.withdraw( currency, amount, address )
     post 'widthdraw', currency: currency, amount: amount, address: address
